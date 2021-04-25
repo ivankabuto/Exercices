@@ -1,0 +1,17 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <img v-bind:src="imagem" alt="" />
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Meu primeiro título...',
+            imagem: 'imagens/mustang.jpg'
+        }
+    });
+</script>

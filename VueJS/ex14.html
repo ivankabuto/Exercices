@@ -1,0 +1,50 @@
+<meta charset='utf-8' />
+<script src='https://unpkg.com/vue'></script>
+<link href="ex14.css" rel="stylesheet" />
+
+<div id="app">
+    <div id="boxPerc">
+        <div id="boxBarra">
+        <div id="boxProg" :style="{'width':progresso + '%'}"></div>
+            <p> {{ progresso.toFixed(2) }} % </p>
+        </div>   
+    </div>
+    <hr />
+    <div id="caixas">
+        <div class="cxPessoa" 
+        v-for="(cidadao,i) in pessoas"
+        :key="i"
+        :class="cidadao.ativo ? 'ativo' : 'inativo'"
+        @click="mudaStatus(cidadao)">
+            <h3> {{ cidadao.nome }} </h3>
+            <h5> {{ cidadao.cargo }} </h5>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            pessoas: [
+                {nome: 'João da Silva', cargo: 'Supervisor', ativo: true},
+                {nome: 'Ana dos Santos', cargo: 'Gerente', ativo: true},
+                {nome: 'Caio de Costas', cargo: 'Operador', ativo: true},
+                {nome: 'Salvio Pinola', cargo: 'Operador', ativo: true},
+                {nome: 'Diogo Cascalho', cargo: 'Caixa', ativo: true},
+                {nome: 'Maria dos Anjos', cargo: 'Operador', ativo: true}
+            ]
+        },
+        methods: {
+            mudaStatus(x) {
+                x.ativo = !x.ativo
+            }
+        },
+        computed: {
+            progresso() {
+                let marcados = this.pessoas.filter(mk => mk.ativo).length;
+                return marcados / this.pessoas.length * 100;
+            }
+        }
+    })
+</script>

@@ -1,0 +1,67 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Lexend Mega', cursive;
+    }
+    ul {
+        list-style: none;
+        width: 400px;
+    }
+    p {
+        padding: 8px;
+        border: 1px solid #e7e7e7;
+        border-radius: 5px;
+    }
+    button {
+        border: none;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 5px 10px;
+        color: #fff;
+        margin: 8px;
+        outline: none;
+    }
+</style>
+
+<div id="app">
+    <div>
+        <ul>
+            <li v-for="(pessoa,i) in pessoas" :key="i">
+                <p v-if="pessoa.status" style="background-color:#acf;">
+                    A {{pessoa.nome}} está ativa 
+                    <button @click="mudaStatus(i)">Mudar Status</button>
+                </p>
+                <p v-else style="background-color:#faa;">
+                    A {{pessoa.nome}} NÃO está ativa 
+                    <button @click="mudaStatus(i)">Mudar Status</button>
+                </p>
+            </li>
+        </ul>
+    </div>    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            pessoas: [
+                { nome: 'Ana Paula da Silva', status: true },
+                { nome: 'José da Silva Paranhos', status: false },
+                { nome: 'Paloma Duarte', status: true },
+            ]
+        },
+        methods: {
+            mudaStatus(i) {
+                this.pessoas[i].status = !this.pessoas[i].status
+            }
+        }
+    });
+</script>
+

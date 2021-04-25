@@ -1,0 +1,29 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #d7d7d7;
+        border: 1px solid #333;
+    }
+
+    .c1 {
+        background-color: #800;
+    }
+</style>
+
+<div id="app">
+    <div class='box' :class={c1:vC1} @click="vC1 = !vC1"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            vC1: false
+        }
+    });
+</script>
+

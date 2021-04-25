@@ -1,0 +1,30 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <img v-bind:src="imagem" alt="" />
+    <br />
+    <button v-on:click="trocaCarro">Trocar Imagem</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Mustang',
+            imagem: 'imagens/mustang.jpg'
+        },
+        methods: {
+            trocaCarro() {
+                if(this.titulo == 'Mustang') {
+                    this.titulo = 'Maseratti'
+                    this.imagem = 'imagens/maseratti.jpg'
+                } else {
+                    this.titulo = 'Mustang'
+                    this.imagem = 'imagens/mustang.jpg'
+                }
+            }
+        }
+    });
+</script>

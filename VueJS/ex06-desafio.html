@@ -1,0 +1,62 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <div class='box-contador'>
+        <button @click="diminui"> - </button>
+        <span> {{ contador }}</span>
+        <button @click="aumenta"> + </button>
+    </div>
+    <hr />
+    <p>O dobro é {{ contador * 2 }}</p>
+    <p>A raiz quadrada é {{ quadrado }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            aumenta() {
+                this.contador++;
+            },
+            diminui() {
+                this.contador--;
+            }
+        },
+        computed: {
+            quadrado() {
+                return Math.sqrt(this.contador)
+            }
+        }
+    });
+</script>
+
+<style>
+    .box-contador {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f00;
+        font-size: 1.1rem;
+        border: 1px solid #d7d7d7;
+    }
+
+    span {
+        padding: 4px;
+        font-size: 1.1rem;
+        width: 80px;
+        text-align: center;
+        border: 1px solid #d7d7d7;
+    }
+</style>

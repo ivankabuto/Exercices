@@ -1,0 +1,28 @@
+.inicio {
+    border: 1px solid black;
+    width: 40%;
+    height: 30%;
+    background-color: rgba(255, 145, 0, 0.747);
+    text-align: justify;
+}
+
+.meio {
+    border: 1px solid black;
+    width: 40%;
+    height: 30%;
+    background-color: rgba(255, 145, 0, 0.747);
+    text-align: justify;
+}
+.fim {
+    border: 1px solid black;
+    width: 40%;
+    height: 30%;
+    background-color: green;
+    text-align: center;
+}
+.num1 {
+    text-align: right;
+}
+.num2 {
+    text-align: right;
+}

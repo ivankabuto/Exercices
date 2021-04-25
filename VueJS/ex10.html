@@ -1,0 +1,53 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    .box {
+        width: 800px;
+        border: 1px solid #333;
+        position: relative;
+        height: 10px;
+    }
+    .progress {
+        position: absolute;
+        top:0px;
+        left: 0px;
+        height: 100%;
+        background-color: #f00;
+    }
+</style>
+
+<div id="app">
+    <div class='box'>
+        <div class='progress' :style='{"width":progress + "%"}'></div>
+        <p style='text-align: center'>{{ progress }}%</p>
+    </div>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            progress: 0
+        },
+        methods: {
+            iniciaBarra() {
+                cl = this
+                x = setInterval(
+                    () => {
+                        if(cl.progress <100) {
+                            cl.progress += 1;
+                        } else {
+                            x.clearInterval;
+                        }
+                    }, 200
+                )
+            }
+        },
+        created() {
+            this.iniciaBarra();
+        }
+    });
+</script>
+

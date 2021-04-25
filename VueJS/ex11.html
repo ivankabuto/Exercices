@@ -1,0 +1,38 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+
+</style>
+
+<div id="app">
+    <div class='box'>
+        <h1>Lista de Aunos</h1>
+        <ul>
+            <li v-for="(aluno,idx) in alunos" :key="idx">
+                {{idx + 1}} - {{aluno.nome}}
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            alunos: [
+                { nome: 'Ana Paula da Silva', RA: '819112345', curso: 'Engenharia' },
+                { nome: 'José da Silva Paranhos', RA: '819167890', curso: 'Ciência da Computacão' },
+                { nome: 'Paloma Duarte', RA: '819113578', curso: 'Biologia' },
+            ]
+        },
+        methods: {
+            
+        }
+    });
+</script>
+

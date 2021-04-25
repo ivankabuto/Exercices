@@ -1,0 +1,16 @@
+#tabela {
+    background-color: gray;
+    width: 30%;
+    height: 30%;
+    font-size: 120%;    
+}
+#botaolimpar{
+    background-color: lightblue;
+}
+#botaocadastrar{
+    background-color: lightblue;
+}
+#titulo{
+    font-size: 120%;
+    text-align: center;
+}

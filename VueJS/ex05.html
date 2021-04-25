@@ -1,0 +1,16 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <input type="text" :value="titulo" v-model="titulo">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Mustang'
+        }
+    });
+</script>

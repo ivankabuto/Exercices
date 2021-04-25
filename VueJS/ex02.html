@@ -1,0 +1,21 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <button v-on:click="alteraTitulo">Mudar título</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Meu primeiro título...'
+        },
+        methods: {
+            alteraTitulo() {
+                this.titulo = 'Novo título'
+            }
+        }
+    });
+</script>

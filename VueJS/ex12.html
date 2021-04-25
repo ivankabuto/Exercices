@@ -1,0 +1,56 @@
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    ul {
+        list-style: none;
+    }
+    ul li {
+        border: 1px solid #333;
+        margin: 5px 0px;
+        padding: 8px;
+    }
+    .aprov {
+        background-color: #acf;
+    }
+    .reprov {
+        background-color: #faa;
+    }
+    .box li:hover {
+        opacity: 0.6;
+    }
+
+</style>
+
+<div id="app">
+    <div class='box'>
+        <h1>Lista de Alunos</h1>
+        <ul>
+            <li v-for="(aluno,idx) in alunos" :key="idx" 
+                :class="{aprov: aluno.nota>=4.5, reprov: aluno.nota<4.5}">
+                {{idx + 1}} - {{aluno.nome}}
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            alunos: [
+                { nome: 'Ana Paula da Silva', RA: '819112345', curso: 'Engenharia', nota: 4.0 },
+                { nome: 'José da Silva Paranhos', RA: '819167890', curso: 'Ciência da Computacão', nota: 5.0 },
+                { nome: 'Paloma Duarte', RA: '819113578', curso: 'Biologia', nota: 4.5 },
+            ]
+        },
+        methods: {
+            classStatus(aluno) {
+                return  
+                    aluno.nota >= 4.5 ? 'aprov': 'reprov'
+            }
+        }
+    });
+</script>
+

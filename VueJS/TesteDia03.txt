@@ -1,0 +1,14 @@
+<meta charset="utf-8" />
+<script src="https://www.unpkg.com/vue"></script>
+
+<div id="barra">
+
+</div>
+
+<script>
+
+</script>
+
+<style>
+
+</style>

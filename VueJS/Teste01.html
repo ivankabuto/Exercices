@@ -1,0 +1,35 @@
+<meta charset="utf-8" /> 
+<script src="https://unpkg.com/vue"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,600;1,200&display=swap" rel="stylesheet">
+<link href="Teste01.css" rel="estylesheet" type="text/css" />
+
+<div id="app">
+    <button @click="diminui">-</button>
+    {{ valor }}
+    <button @click="aumenta">+</button>
+    O dobro do valor é {{ 2 * valor }}<br />
+    A raiz quadrada de {{ valor }} é {{ raiz }}
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            valor: 0
+        },
+        methods:  {
+            aumenta() {
+                this.valor = this.valor + 1;
+            },
+            diminui() {
+                this.valor = this.valor - 1;
+                }
+            },
+            computed: {
+                raiz() {
+                    return Math.sqrt(this.valor)
+                }
+            }
+        
+    })
+</script>

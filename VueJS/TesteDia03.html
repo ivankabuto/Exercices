@@ -1,0 +1,68 @@
+<meta charset="utf-8" />
+<script src="https://www.unpkg.com/vue"></script>
+
+<div id="barra">
+    <div id="boxBarra">
+        <div id="progresso"
+            :style="{'width':progresso + '%'}">
+        </div>
+        <p> {{ progresso }} % </p>
+    </div>
+    <!--button @click="aumenta">Aumenta 5%</!--button> -->
+</div>
+
+<script>
+new Vue({
+    el: "#barra",
+    data: {
+        progresso: 0
+    },
+    methods: {
+        aumenta() {
+            let cl = this;
+            x = setInterval(
+                function() {
+                    if(cl.progresso < 100) {
+                        cl.progresso+=5;
+                    } else {
+                    alert("Você chegou no 100%")
+                    cl.progresso = 0;
+                    clearInterval(x);
+                    }
+                }, 500
+            );
+        }
+    },
+    created() {
+        this.aumenta();
+    }
+    
+});
+
+</script>
+
+<style>
+    #barra {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    #boxBarra {
+        width: 90%;
+        height: 50px;
+        border: 1px solid #333;
+        position: relative;
+    }
+    #progresso {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100px;
+        background-color: #00f;
+    }
+    p {
+        text-align: center center;
+    }
+</style>
