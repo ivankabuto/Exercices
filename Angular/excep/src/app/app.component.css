@@ -1,0 +1,36 @@
+#componente {
+    padding: 50px 50px 50px 70px;
+    background-color: #358C74;
+    width: 15%;
+}
+
+.textoalto {
+    font-size: 120%;
+    font-weight: bold;
+    padding: 20px 20px 20px 0;
+}
+
+#botao {
+    color: black;
+    background-color: darkgrey;
+    border-bottom: 4px solid grey;
+    width: 50%;
+    justify-content: right;
+    align-items: center;
+}
+
+#avisoerro {
+    color: red;
+}
+
+#aviso {
+    color: blue;
+}
+
+#formulario {
+    padding-bottom: 20px;
+}
+
+input {
+    height: 25px;
+}

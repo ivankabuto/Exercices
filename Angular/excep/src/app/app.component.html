@@ -1,0 +1,33 @@
+<div id="componente">
+  <form>
+    <div id="formulario">
+  <label for="nome" class="textoalto">Nome: </label><br>
+  <input type="text" name="nome" [(ngModel)]="cliente.Nome" placeholder="Digite seu nome completo"><br>
+  <label for="cpf" class="textoalto">CPF: </label><br>
+  <input type="text" name="cpf" [(ngModel)]="cliente.CPF" placeholder="Digite seu CPF"><br>
+  <div id="aviso" *ngIf="cliente.CPFValido()">
+    CPF Válido </div>
+  <div id="avisoerro" *ngIf="!cliente.CPFValido()">
+    CPF Inválido </div>
+  <label for="cep" class="textoalto">CEP: </label><br>
+  <input type="text" name="cep" [(ngModel)]="cliente.CEP" (blur)="VerificaCEP()" placeholder="Digite seu CEP"><br>
+  <label for="endereco" class="textoalto">Endereço </label><br>
+  <label>Rua:</label><br>
+  <input type="text" name="endereco" [(ngModel)]="cliente.Endereco" placeholder="Logradouro"><br>
+  <label>Numero:</label><br>
+  <input type="text" name="numero" placeholder="Numero"><br>
+  <label>Complemento:</label><br>
+  <input type="text" name="complemento" placeholder="Complemento"><br>
+  <label>Bairro:</label><br>
+  <input type="text" name="bairro" [(ngModel)]="cliente.Bairro" placeholder="Bairro"><br>
+  <label>Cidade:</label><br>
+  <input type="text" name="cidade" [(ngModel)]="cliente.Cidade" placeholder="Cidade"><br>
+  <label>UF:</label><br>
+  <input type="text" name="estado" [(ngModel)]="cliente.Estado" placeholder="Estado"><br>
+    </div>
+  <div>
+  <input id="botao" type="button" (click)="salvar()" value="Salvar" [disabled]="!cliente.CPFValido()" />
+  </div>
+  </form>
+ </div>
+<router-outlet></router-outlet>
